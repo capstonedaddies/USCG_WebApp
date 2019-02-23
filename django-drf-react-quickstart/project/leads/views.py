@@ -4,7 +4,8 @@ import pyrebase
 # Create your views here.
 
 config = {
-    'apiKey': "AIzaSyCiXxfNGJ4udL-zC42djLH5yaKMUo5kwEM",
+    #contact sean for api key
+    'apiKey': "",
     'authDomain': "uscg-responder.firebaseapp.com",
     'databaseURL': "https://uscg-responder.firebaseio.com",
     'projectId': "uscg-responder",
