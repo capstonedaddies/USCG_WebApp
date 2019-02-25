@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -19,13 +19,58 @@
 </head>
 
 <body>
-    <div class="jumbotron">
-        <h1 class="tester">Hello World!</h1>
+    <!--header-->
+    <!--<div class="header">
+        <h1>Welcome to Rescue 21</h1>
+    </div>-->
+
+    <header id="header">
+        <div class="skin-header-background">
+            <div class="skin-header row">
+                <div class="cg-logo col-2">
+                    <a href="http://www.uscg.mil/" target="">
+                        <img src="../static/assets/Official USCG Emblem.png" alt="United States Coast Guard Logo" title="United States Coast Guard"
+                            style="max-height: 100%">
+                    </a>
+                </div>
+                <div class="col-10">
+                    <div class="skin-title">
+                        <a href="https://www.uscg.mil/" title="United States Coast Guard">
+                            <div class="hidden-xs">
+                                <span class="title-text withsub">United States Coast Guard</span>
+                                <span class="subtitle-text">U.S. Department of Homeland Security</span>
+                            </div>
+                            <div class="visible-xs title-text">
+                                United States Coast Guard
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="otnav nopad">
+                <nav class="nav-main">
+                    <ul class="nav nav-main">
+                        <li class="dropdown  top-level ">
+                            <a href="https://www.uscg.mil/home/" target="" tabindex="0" aria-expanded="false">home<span
+                                    class="fa fa-lg fa-angle-down"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <div>
         <form action="postsign" method="post">
             {% csrf_token %}
-            Email: <input type="email" name="email">
-            Password: <input type="password" name="pass">
-            <input type="submit" value="SignIn">
+            <div class="form-group">
+
+                Email: <input class="input" type="email" name="email">
+                Password: <input type="password" name="pass">
+                <input type="submit" value="SignIn">
+            </div>
         </form>
     </div>
 </body>
