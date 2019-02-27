@@ -16,24 +16,34 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
+
+
+    <script>
+        $( document ).ready(function() {
+            window.onresize = function() {
+                console.log(window.innerWidth);
+                if (window.innerWidth < 450) {
+                    $(".title-text").html("United States<br>Coast Guard");
+                } else {
+                    $(".title-text").html("United States Coast Guard");
+                }
+            }
+        });
+    </script>
 </head>
 
 <body>
-    <!--header-->
-    <!--<div class="header">
-        <h1>Welcome to Rescue 21</h1>
-    </div>-->
-
+    <!--Nav Bar and Sign in-->
     <header id="header">
         <div class="skin-header-background">
             <div class="skin-header row">
-                <div class="cg-logo col-2">
+                <div class="cg-logo col-sm-12 col-md-2">
                     <a href="http://www.uscg.mil/" target="">
                         <img src="../static/assets/Official USCG Emblem.png" alt="United States Coast Guard Logo" title="United States Coast Guard"
                             style="max-height: 100%">
                     </a>
                 </div>
-                <div class="col-10">
+                <div class="col-sm-12 col-md-6">
                     <div class="skin-title">
                         <a href="https://www.uscg.mil/" title="United States Coast Guard">
                             <div class="hidden-xs">
@@ -46,12 +56,33 @@
                         </a>
                     </div>
                 </div>
+                <div class="col-sm-12 col-md-4">
+                    <!--Authentication Form-->
+                    <form action="postsign" method="post">
+                        {% csrf_token %}
+                        <div class="form-group login-form">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    Email: <input class="input" type="email" name="email">
+                                </div>
+                                <div class="col-sm-12">
+                                    Password: <input type="password" name="pass">
+                                </div>
+                                <div class="col-sm-12 form-submit">
+                                    <button class="btn btn-submit" type="submit" value="SignIn">
+                                        Sign In
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="otnav nopad">
                 <nav class="nav-main">
                     <ul class="nav nav-main">
                         <li class="dropdown  top-level ">
-                            <a href="https://www.uscg.mil/home/" target="" tabindex="0" aria-expanded="false">home<span
+                            <a href="https://www.uscg.mil/home/" target="" tabindex="0" aria-expanded="false">USCG Home<span
                                     class="fa fa-lg fa-angle-down"></span>
                             </a>
                         </li>
@@ -60,19 +91,6 @@
             </div>
         </div>
     </header>
-
-
-    <div>
-        <form action="postsign" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-
-                Email: <input class="input" type="email" name="email">
-                Password: <input type="password" name="pass">
-                <input type="submit" value="SignIn">
-            </div>
-        </form>
-    </div>
 </body>
 
 </html>

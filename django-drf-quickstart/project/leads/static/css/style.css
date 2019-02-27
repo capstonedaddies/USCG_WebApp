@@ -5,6 +5,24 @@
     padding: 0;
 }
 
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+ul,
+ol {
+    margin-bottom: 18px;
+    margin-left: 18px;
+}
+
+.row {
+    padding: 0;
+}
+
 /*#endregion */
 
 /*#region Header */
@@ -22,6 +40,11 @@
 
 .skin-header-background {
     background: url(../assets/header-background.png) no-repeat left top;
+}
+
+.skin-header {
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .skin-title {
@@ -63,6 +86,20 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#486591', endColorstr='#123b69', GradientType=0);
 }
 
+.otnav li {
+    position: relative;
+    float: left;
+}
+
+.otnav li a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+}
+
 .nopad {
     padding-left: 0;
     padding-right: 0;
@@ -75,9 +112,60 @@
 .nav {
     margin-bottom: 0;
     padding-left: 0;
+    padding-right: 0;
     list-style: none;
 }
 
+.nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav li a {
+    display: block;
+    padding: 10px 15px;
+}
+
+.login-form {
+    padding-top: 5px;
+    padding-left: 15px;
+    text-align: right;
+}
+
+.login-form div {
+    padding: 3px;
+    color: #315481;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+}
+
+.login-form input {
+    border-radius: 4px;
+    background-color: #fff;
+    width: 50%;
+}
+
+.form-submit {
+    text-align: right;
+}
+
+.btn-submit {
+    border: 1px solid black;
+    background-color: #315481;
+    color: white;
+    font-size: 0.8rem;
+    height: 25px;
+    padding: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*Mobile Views*/
 @media (max-width: 767px) {
     .skin-title {
         padding-top: 8px;
@@ -94,8 +182,68 @@
 
     .visible-xs {
         display: block !important;
+        text-align: center;
+    }
+
+    .hidden-xs {
+        display: none;
+    }
+
+    .cg-logo {
+        text-align: center;
+    }
+
+    .title-text {
+        margin: auto;
+    }
+
+    .skin-title {
+        margin: auto;
+    }
+
+    .otnav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .skin-header {
+        position: fixed;
+        top: 40px;
+        left: 0;
+        width: 100%;
+    }
+
+    .skin-header-background {
+        background: url(../assets/header-background.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: fixed;
+        top: 40px;
+        left: 0;
+        height: 100%;
+        width: 150%;
+    }
+
+    .login-form {
+        text-align: center;
+    }
+
+    .form-submit {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .login-form input {
+        width: 100%;
+        height: 35px;
+    }
+
+    .btn-submit {
+        height: 45px;
+        width: 75px;
     }
 }
-
 
 /*#endregion */
