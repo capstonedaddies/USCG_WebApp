@@ -1,1 +1,4 @@
+#Virtual Env
 /VenvDjango/*
+#API Keys
+keys.py
