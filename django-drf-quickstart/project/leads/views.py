@@ -6,7 +6,7 @@ import pyrebase
 authKey = ApiKeys.authKey
 
 config = {
-    # contact sean for api key
+    # contact sean for keys.py file
     'apiKey': authKey,
     'authDomain': "uscg-responder.firebaseapp.com",
     'databaseURL': "https://uscg-responder.firebaseio.com",
@@ -27,5 +27,4 @@ def postsign(request):
     password = request.POST.get("pass")
 
     user = auth.sign_in_with_email_and_password(email, password)
-
     return render(request, "welcome.html", {"e": email})
