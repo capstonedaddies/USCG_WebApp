@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
 
     <title>Page Title</title>
     {% load static %}
@@ -83,52 +81,24 @@
         </div>
     </header>
 
-    <footer>
-        <div class="skin-footer-background">
-            <div class="skin-footer row">
-                <div class="col-sm-12 col-md-5 semper-paratus">
-                    <img src="../static/assets/semper-paratus.png" alt="semper paratus always ready" title="Semper Paratus"
-                        style="max-height: 100%" />
-                </div>
-                <div class="col-sm-12 col-md-3">
-                    <!--<h1>Middle</h1>-->
-                </div>
-                <div class="col-sm-12 col-md-4 skin-social">
-                    <div class="row">
-                        <div class="col-sm-12 stay-connected">
-                            <h3>Stay Connected</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <ul>
-                                <li>
-                                    <a href="http://www.facebook.com/UScoastguard" title="" target="_blank">
-                                        <i class="social-icon fab fa-facebook-f social-link-11"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.facebook.com/UScoastguard" title="" target="_blank">
-                                        <i class="social-icon fab fa-twitter social-link-11"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.facebook.com/UScoastguard" title="" target="_blank">
-                                        <i class="social-icon fab fa-youtube social-link-11"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.facebook.com/UScoastguard" title="" target="_blank">
-                                        <i class="social-icon fab fa-linkedin-in social-link-11"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!--UI For the Rescue Tool-->
+    <section>
+        <div class="rescue-map">
+            <div id="map" style="height: 100%;"></div>
         </div>
-    </footer>
+    </section>
+
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 36.850769, lng: -76.285873},
+                zoom: 8
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=#ContactSeanForKey#&callback=initMap"
+    async defer></script>
 </body>
 
 </html>
