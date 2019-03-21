@@ -97,7 +97,8 @@
             });
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=#ContactSeanForKey#&callback=initMap"
+    {% csrf_token %}
+    <script src="https://maps.googleapis.com/maps/api/js?key={{mk}}&callback=initMap"
     async defer></script>
 </body>
 

@@ -4,6 +4,7 @@ import pyrebase
 
 # Create your views here.
 authKey = ApiKeys.authKey
+mapKey = ApiKeys.mapsKey
 
 config = {
     # contact sean for keys.py file
@@ -27,4 +28,4 @@ def postsign(request):
     password = request.POST.get("pass")
 
     user = auth.sign_in_with_email_and_password(email, password)
-    return render(request, "welcome.html", {"e": email})
+    return render(request, "welcome.html", {"e": email, "mk": mapKey})
