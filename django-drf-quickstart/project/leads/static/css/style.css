@@ -117,6 +117,16 @@ a {
   right: 0px;
 }
 
+.rescue-tools {
+  background-color: #353536;
+  border-right-style: solid;
+  border-right-color: #51b0e0;
+  height: calc(100% - (150px)); 
+  width: 30%;
+  position: absolute;
+  left: 0px;
+}
+
 .skin-footer-background {
   background: url(../assets/footer-background.png) no-repeat left top;
   background-size: 100%;

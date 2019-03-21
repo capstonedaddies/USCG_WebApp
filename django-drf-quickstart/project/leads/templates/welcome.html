@@ -83,6 +83,9 @@
 
     <!--UI For the Rescue Tool-->
     <section>
+        <div class="rescue-tools">
+
+        </div>
         <div class="rescue-map">
             <div id="map" style="height: 100%;"></div>
         </div>
@@ -90,10 +93,55 @@
 
     <script>
         var map;
+        var marker;
+        //temp boats
+        var tempBoat;
+        var tempBoat2;
+        var tempBoat3;
+        
         function initMap() {
+            var homeLongLat = {lat: 36.9168, lng: -76.1897};
+            var homeIcon = 'https://img.icons8.com/ultraviolet/40/000000/lighthouse.png';
+
+            //temp boater, live site will have a for loop generating boaters from the database
+            var boatLongLat = {lat: 36.975875, lng: -74.866134};
+            var boat2LongLat = {lat: 36.777477, lng: -75.325754};
+            var boat3LongLat = {lat: 36.498321, lng: -74.537524};
+            var boatIcon = 'https://img.icons8.com/ios-glyphs/15/000000/fishing-boat.png';
+            var emergencyIcon = 'https://img.icons8.com/office/30/000000/lifebuoy.png';
+
             map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 36.850769, lng: -76.285873},
+                center: {lat: 36.9168, lng: -76.1897},
                 zoom: 8
+            });
+
+            marker = new google.maps.Marker({
+                position: homeLongLat,
+                map: map,
+                title: 'USCG Station Little Creek',
+                icon: homeIcon
+
+            });
+
+            tempBoat = new google.maps.Marker({
+                position: boatLongLat,
+                map: map,
+                title: 'John Smith\'s Boat',
+                icon: boatIcon
+            });
+
+            tempBoat2 = new google.maps.Marker({
+                position: boat2LongLat,
+                map: map,
+                title: 'Jim Doe\'s Boat',
+                icon: boatIcon
+            });
+
+            tempBoat3 = new google.maps.Marker({
+                position: boat3LongLat,
+                map: map,
+                title: 'Alex Smith\'s Boat',
+                icon: emergencyIcon
             });
         }
     </script>
