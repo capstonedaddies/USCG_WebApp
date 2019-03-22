@@ -134,6 +134,10 @@ a {
   height: 150px;
 }
 
+.message-modal {
+  display: none;
+}
+
 .skin-header {
   margin-left: 0px;
   margin-right: 0px;
