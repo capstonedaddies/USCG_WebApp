@@ -90,7 +90,24 @@
     <!--UI For the Rescue Tool-->
     <section>
         <div class="rescue-tools">
-
+            <div class="row rescue-tool-top">
+                <h1 style="padding-left: 15px;">TOP</h1>
+            </div>
+            <!--Displays info of currently selected boater-->
+            <div class="row rescue-tool-bottom">
+                <div class="col-sm-5">
+                    <img src="../static/assets/temp-avatar.png">
+                </div>
+                <div class="col-sm-7">
+                    <h2>John Smith</h2>
+                    <ol>
+                        <li>xxxxxxxxxx</li>
+                        <li>xxxxxxxxxx</li>
+                        <li>xxxxxxxxxx</li>
+                        <li>xxxxxxxxxx</li>
+                    </ol>
+                </div>            
+            </div>
         </div>
         <div class="rescue-map">
             <div id="map" style="height: 100%;"></div>
@@ -185,10 +202,11 @@
             });
 
         }
+        console.log('{{db}}')
     </script>
-    {% csrf_token %}
     <script src="https://maps.googleapis.com/maps/api/js?key={{mk}}&callback=initMap"
-    async defer></script>
+    async defer>
+    </script>
 </body>
 
 </html>

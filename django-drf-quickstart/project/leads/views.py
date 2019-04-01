@@ -17,15 +17,25 @@ config = {
 }
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
+database = firebase.database()
 
+def noquote(s):
+    return s
 
 def index(request):
     return render(request, "index.html")
 
 
 def postsign(request):
+    pyrebase.pyrebase.quote = noquote
     email = request.POST.get('email')
     password = request.POST.get("pass")
+    db = database.child("uscg-responder").child("user_locations").child("bobbyBoater").get()
+    #print(db.key())
 
     user = auth.sign_in_with_email_and_password(email, password)
-    return render(request, "welcome.html", {"e": email, "mk": mapKey})
+    return render(request, "welcome.html", {"e": email, "mk": mapKey, "db": db.key})
+
+
+
+    

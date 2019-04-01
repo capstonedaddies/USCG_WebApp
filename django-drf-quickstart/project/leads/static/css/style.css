@@ -61,6 +61,11 @@ ol {
   margin-left: 18px;
 }
 
+.rescue-tool-bottom li {
+  display: inline-block;
+  width: 100%;
+}
+
 .row {
   padding: 0;
 }
@@ -125,6 +130,26 @@ a {
   width: 30%;
   position: absolute;
   left: 0px;
+}
+
+.rescue-tool-top {
+  height: 60%;
+  width: 100%;
+  color: #fff;
+}
+
+.rescue-tool-bottom {
+  height: 30%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+.rescue-tool-bottom img {
+  width: 100%;
+  height: 100%;
+  margin-top: 15px;
 }
 
 .skin-footer-background {
